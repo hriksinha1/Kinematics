@@ -1,5 +1,5 @@
 import React from 'react';
-import { CLINIC_ADDRESS, CLINIC_HOURS } from '../data/siteConfig';
+import { CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_URL } from '../data/siteConfig';
 import { Button } from './Button';
 
 interface VisitCardProps {
@@ -16,12 +16,11 @@ export const VisitCard: React.FC<VisitCardProps> = ({ className = '' }) => {
         <p className="text-[15px] sm:text-[16px] font-semibold text-[#0D1B49] leading-snug">
           {CLINIC_ADDRESS.street}
         </p>
-        {CLINIC_ADDRESS.city && (
-          <p className="text-[13px] text-[#687080]">
-            {CLINIC_ADDRESS.city}{CLINIC_ADDRESS.province ? `, ${CLINIC_ADDRESS.province}` : ''} {CLINIC_ADDRESS.postalCode}
-          </p>
-        )}
+        <p className="text-[13px] text-[#687080]">
+          {CLINIC_ADDRESS.city}, {CLINIC_ADDRESS.province} {CLINIC_ADDRESS.postalCode}
+        </p>
       </div>
+
       <div className="border-t border-[#E7EAF0] pt-3.5 space-y-2">
         {CLINIC_HOURS.map((item) => (
           <div key={item.days} className="flex items-center justify-between gap-3 text-[12px] sm:text-[13px]">
@@ -30,9 +29,13 @@ export const VisitCard: React.FC<VisitCardProps> = ({ className = '' }) => {
           </div>
         ))}
       </div>
-      <div className="pt-1">
-        <Button variant="primary" href={CLINIC_ADDRESS.googleMapsUrl} fullWidth className="text-[13px] py-2.5 rounded-full">
-          Contact / directions
+
+      <div className="pt-1 space-y-2">
+        <Button variant="primary" href={WHATSAPP_URL} external fullWidth withArrow className="text-[13px] py-2.5 rounded-full">
+          Book on WhatsApp
+        </Button>
+        <Button variant="secondary" href={CLINIC_ADDRESS.googleMapsUrl} external fullWidth className="text-[13px] py-2.5 rounded-full">
+          Get directions
         </Button>
       </div>
     </div>
