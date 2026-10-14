@@ -7,30 +7,14 @@ interface NumberedFeatureProps {
   isLast?: boolean;
 }
 
-export const NumberedFeature: React.FC<NumberedFeatureProps> = ({
-  number,
-  title,
-  text,
-  isLast = false,
-}) => {
-  return (
-    <div
-      className={`flex items-start gap-4 py-4 sm:py-5 ${
-        !isLast ? 'border-b border-[#E7EAF0]' : ''
-      }`}
-    >
-      {/* 26px pale-blue circle with number */}
-      <div className="w-7 h-7 rounded-full bg-[#EAF1FF] text-[#2868F5] font-semibold text-[13px] flex items-center justify-center shrink-0 mt-0.5 select-none">
-        {number}
-      </div>
-      <div className="space-y-1">
-        <h3 className="text-[15px] sm:text-[16px] font-semibold text-[#0D1B49] tracking-tight">
-          {title}
-        </h3>
-        <p className="text-[14px] sm:text-[15px] text-[#687080] leading-[1.6]">
-          {text}
-        </p>
-      </div>
+export const NumberedFeature: React.FC<NumberedFeatureProps> = ({ number, title, text, isLast = false }) => (
+  <div className={`flex items-start gap-4 sm:gap-5 py-5 sm:py-6 ${!isLast ? 'border-b border-[#DDE4EF]' : ''}`}>
+    <div className="mt-0.5 flex h-9 w-9 shrink-0 select-none items-center justify-center rounded-[12px] bg-[#C8F36A] text-[14px] font-extrabold text-[#101A3A] shadow-[0_4px_12px_rgba(200,243,106,0.25)]">
+      {number.padStart(2, '0')}
     </div>
-  );
-};
+    <div className="space-y-1.5">
+      <h3 className="text-[17px] sm:text-[18px] font-bold text-[#101A3A] tracking-[-0.015em]">{title}</h3>
+      <p className="text-[15px] sm:text-[16px] text-[#556176] leading-[1.7]">{text}</p>
+    </div>
+  </div>
+);
