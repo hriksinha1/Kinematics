@@ -155,8 +155,8 @@ export const TEAM_CONTENT = {
       role: 'Spinal & Joint Movement',
       credentials: 'Assessment · Manual care · Movement advice',
       image: {
-        src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80',
-        alt: 'Clinician talking with a patient during a healthcare consultation',
+        src: 'https://images.unsplash.com/photo-1768507423533-b87b62769758?auto=format&fit=crop&w=700&q=80',
+        alt: 'Chiropractor adjusting a patient’s upper back and neck during a clinical treatment session',
         width: 600,
         height: 750,
       },
