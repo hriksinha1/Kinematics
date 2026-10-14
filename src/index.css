@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --color-primary: #2868F5;
+    --color-primary-hover: #1b56dc;
+    --color-navy: #0D1B49;
+    --color-navy-dark: #08112e;
+    --color-text: #151923;
+    --color-muted: #687080;
+    --color-border: #E7EAF0;
+    --color-surface-pale: #F0F4FF;
+    --color-surface-accent: #EAF1FF;
+  }
+}
+
+/* Base typography and body styling */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #151923;
+  background-color: #FFFFFF;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+}
+
+/* Display font class for Bebas Neue headings */
+.font-display {
+  font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  letter-spacing: 0.015em;
+  line-height: 1.0;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Section scroll margin offset for the sticky/fixed header */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid #2868F5;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar utility for mobile collage drag/swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

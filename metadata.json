@@ -1,0 +1,6 @@
+{
+  "name": "Aurora Dental Toronto",
+  "description": "Modern, comfortable dental care in Toronto built around comfort, clarity, and long-term oral health.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
