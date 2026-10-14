@@ -22,21 +22,17 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   id,
 }) => {
   return (
-    <div className={`space-y-3.5 ${centered ? 'text-center' : 'text-left'} ${className}`}>
+    <div className={`space-y-4 ${centered ? 'text-center' : 'text-left'} ${className}`}>
       <Component
         id={id}
-        className={`font-display text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] leading-[1.0] tracking-[0.01em] ${
-          isDark ? 'text-white' : 'text-[#0D1B49]'
-        }`}
+        className={`font-display text-[38px] sm:text-[46px] md:text-[54px] lg:text-[60px] leading-[0.94] tracking-[0.005em] ${isDark ? 'text-white' : 'text-[#101A3A]'}`}
         style={{ textWrap: 'balance' }}
       >
         {title}
       </Component>
       {description && (
         <p
-          className={`text-[15px] sm:text-[16px] leading-[1.6] ${
-            isDark ? 'text-slate-300' : 'text-[#687080]'
-          } ${maxWidthCh} ${centered ? 'mx-auto' : ''}`}
+          className={`text-[16px] sm:text-[17px] leading-[1.7] font-normal ${isDark ? 'text-slate-300' : 'text-[#556176]'} ${maxWidthCh} ${centered ? 'mx-auto' : ''}`}
         >
           {description}
         </p>
