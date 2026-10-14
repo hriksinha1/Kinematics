@@ -8,10 +8,7 @@ interface VisitCardProps {
 
 export const VisitCard: React.FC<VisitCardProps> = ({ className = '' }) => {
   return (
-    <div
-      className={`bg-white rounded-[20px] border border-[#E7EAF0] p-5 sm:p-6 shadow-[0_4px_16px_rgba(13,27,73,0.06)] w-full max-w-[340px] space-y-4 ${className}`}
-    >
-      {/* Clinic Name & Address */}
+    <div className={`bg-white rounded-[20px] border border-[#E7EAF0] p-5 sm:p-6 shadow-[0_4px_16px_rgba(13,27,73,0.06)] w-full max-w-[340px] space-y-4 ${className}`}>
       <div className="space-y-1">
         <span className="text-[12px] font-medium text-[#687080] tracking-wide block">
           {CLINIC_ADDRESS.name}
@@ -19,32 +16,23 @@ export const VisitCard: React.FC<VisitCardProps> = ({ className = '' }) => {
         <p className="text-[15px] sm:text-[16px] font-semibold text-[#0D1B49] leading-snug">
           {CLINIC_ADDRESS.street}
         </p>
-        <p className="text-[13px] text-[#687080]">
-          {CLINIC_ADDRESS.city}, {CLINIC_ADDRESS.province} {CLINIC_ADDRESS.postalCode}
-        </p>
+        {CLINIC_ADDRESS.city && (
+          <p className="text-[13px] text-[#687080]">
+            {CLINIC_ADDRESS.city}{CLINIC_ADDRESS.province ? `, ${CLINIC_ADDRESS.province}` : ''} {CLINIC_ADDRESS.postalCode}
+          </p>
+        )}
       </div>
-
       <div className="border-t border-[#E7EAF0] pt-3.5 space-y-2">
-        {CLINIC_HOURS.map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between text-[12px] sm:text-[13px]"
-          >
+        {CLINIC_HOURS.map((item) => (
+          <div key={item.days} className="flex items-center justify-between gap-3 text-[12px] sm:text-[13px]">
             <span className="text-[#687080] font-normal">{item.days}</span>
-            <span className="text-[#0D1B49] font-medium">{item.hours}</span>
+            <span className="text-[#0D1B49] font-medium text-right">{item.hours}</span>
           </div>
         ))}
       </div>
-
       <div className="pt-1">
-        <Button
-          variant="primary"
-          href={CLINIC_ADDRESS.googleMapsUrl}
-          external
-          fullWidth
-          className="text-[13px] py-2.5 rounded-full"
-        >
-          Get directions
+        <Button variant="primary" href={CLINIC_ADDRESS.googleMapsUrl} fullWidth className="text-[13px] py-2.5 rounded-full">
+          Contact / directions
         </Button>
       </div>
     </div>
