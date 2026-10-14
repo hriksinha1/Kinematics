@@ -9,18 +9,12 @@ export interface FaqItemProps {
   onToggle: () => void;
 }
 
-export const FaqItem: React.FC<FaqItemProps> = ({
-  id,
-  question,
-  answer,
-  isOpen,
-  onToggle,
-}) => {
+export const FaqItem: React.FC<FaqItemProps> = ({ id, question, answer, isOpen, onToggle }) => {
   const headingId = `faq-heading-${id}`;
   const contentId = `faq-content-${id}`;
 
   return (
-    <div className="bg-white rounded-[14px] border border-[#E7EAF0] transition-colors duration-200 hover:border-[#ccd4e0] overflow-hidden">
+    <div className={`overflow-hidden rounded-[18px] border bg-white transition-all duration-200 ${isOpen ? 'border-[#2F5BFF]/35 shadow-[0_10px_26px_rgba(16,26,58,0.07)]' : 'border-[#DDE4EF] hover:border-[#AEBBD1] hover:shadow-[0_6px_18px_rgba(16,26,58,0.045)]'}`}>
       <h3>
         <button
           type="button"
@@ -28,33 +22,19 @@ export const FaqItem: React.FC<FaqItemProps> = ({
           aria-expanded={isOpen}
           aria-controls={contentId}
           onClick={onToggle}
-          className="w-full flex items-center justify-between text-left p-4 sm:p-5 gap-3.5 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#2868F5] focus-visible:outline-offset-[-2px]"
+          className="flex min-h-[66px] w-full cursor-pointer items-center justify-between gap-4 px-4 py-4 sm:px-5 sm:py-5 text-left focus-visible:outline-2 focus-visible:outline-[#2F5BFF] focus-visible:outline-offset-[-3px]"
         >
-          <span className="text-[14px] sm:text-[15px] font-medium text-[#0D1B49] leading-snug">
-            {question}
-          </span>
-          <span
-            className={`w-6 h-6 rounded-full bg-[#EAF1FF] text-[#2868F5] flex items-center justify-center shrink-0 transition-transform duration-200 ${
-              isOpen ? 'rotate-45 bg-[#2868F5] text-white' : ''
-            }`}
-            aria-hidden="true"
-          >
-            <Plus className="w-3.5 h-3.5" />
+          <span className="text-[15px] sm:text-[16px] font-bold text-[#101A3A] leading-snug tracking-[-0.01em]">{question}</span>
+          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] transition-all duration-200 ${isOpen ? 'rotate-45 bg-[#101A3A] text-[#C8F36A]' : 'bg-[#C8F36A] text-[#101A3A]'}`} aria-hidden="true">
+            <Plus className="w-4 h-4" />
           </span>
         </button>
       </h3>
 
-      <div
-        id={contentId}
-        role="region"
-        aria-labelledby={headingId}
-        className={`grid transition-all duration-200 ease-in-out ${
-          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-        }`}
-      >
+      <div id={contentId} role="region" aria-labelledby={headingId} className={`grid transition-all duration-200 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
         <div className="overflow-hidden">
-          <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-0 text-[13px] sm:text-[14px] text-[#687080] leading-[1.6] border-t border-[#F0F4FF] mt-1">
-            <p className="pt-2">{answer}</p>
+          <div className="mx-4 mt-0 border-t border-[#DDE4EF] px-0 pb-5 pt-3 sm:mx-5">
+            <p className="text-[14px] sm:text-[15px] text-[#556176] leading-[1.75]">{answer}</p>
           </div>
         </div>
       </div>
