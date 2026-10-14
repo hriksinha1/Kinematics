@@ -38,7 +38,7 @@ export const FinalCta: React.FC = () => {
               <Button
                 variant="white-outline"
                 size="md"
-                href={`tel:${PHONE_TEL}`}
+                href={PHONE_TEL ? `tel:${PHONE_TEL}` : '#visit'}
                 className="w-full sm:w-auto"
               >
                 {FINAL_CTA_CONTENT.secondaryCta}
