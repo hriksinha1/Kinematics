@@ -5,49 +5,17 @@
 export const HERO_CONTENT = {
   eyebrow: 'Physiotherapy · Sports Rehabilitation · Chiropractic',
   headline: 'Move better. Recover stronger.',
+  headlineLead: 'Move better.',
+  headlineAccent: 'Recover stronger.',
   description: 'Personalised care for pain, movement and recovery. From everyday aches to sports injuries, Kinematics helps you build strength, restore confidence and get back to what matters.',
   primaryCta: 'Book an Appointment',
   secondaryCta: 'Explore Our Services',
   collage: [
-    {
-      id: 'collage-1',
-      src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80',
-      alt: 'Athlete working through a guided strength and mobility exercise',
-      width: 400,
-      height: 600,
-    },
-    {
-      id: 'collage-2',
-      src: 'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=600&q=80',
-      alt: 'Physiotherapist guiding a patient through a rehabilitation exercise',
-      pillLabel: 'Care built around you',
-      pillPosition: 'top-left',
-      width: 500,
-      height: 600,
-    },
-    {
-      id: 'collage-3',
-      src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80',
-      alt: 'Athlete training with a focus on controlled movement and strength',
-      pillLabel: 'Progress at your pace',
-      pillPosition: 'bottom-center',
-      width: 1000,
-      height: 600,
-    },
-    {
-      id: 'collage-4',
-      src: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=600&q=80',
-      alt: 'Sports rehabilitation session focused on mobility and movement',
-      width: 500,
-      height: 600,
-    },
-    {
-      id: 'collage-5',
-      src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80',
-      alt: 'Person doing a guided stretching and mobility routine',
-      width: 400,
-      height: 600,
-    },
+    { id: 'collage-1', src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80', alt: 'Athlete working through a guided strength and mobility exercise', width: 400, height: 600 },
+    { id: 'collage-2', src: 'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=600&q=80', alt: 'Physiotherapist guiding a patient through a rehabilitation exercise', pillLabel: 'Care built around you', pillPosition: 'top-left', width: 500, height: 600 },
+    { id: 'collage-3', src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80', alt: 'Athlete training with a focus on controlled movement and strength', pillLabel: 'Progress at your pace', pillPosition: 'bottom-center', width: 1000, height: 600 },
+    { id: 'collage-4', src: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=600&q=80', alt: 'Sports rehabilitation session focused on mobility and movement', width: 500, height: 600 },
+    { id: 'collage-5', src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80', alt: 'Person doing a guided stretching and mobility routine', width: 400, height: 600 },
   ],
   extraPill: { label: 'Movement-led recovery' },
 };
@@ -68,50 +36,19 @@ export const SERVICES_CONTENT = {
     description: 'Individual assessment and practical treatment to improve mobility, build strength and support recovery from pain or injury.',
     linkText: 'Explore physiotherapy →',
     href: '#experience',
-    image: {
-      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',
-      alt: 'Physiotherapist discussing a personalised recovery plan with a patient',
-      width: 800,
-      height: 500,
-    },
+    image: { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80', alt: 'Physiotherapist discussing a personalised recovery plan with a patient', width: 800, height: 500 },
   },
   cards: [
-    {
-      id: 'sports-rehab',
-      iconType: 'sparkle',
-      title: 'Sports Injury Rehabilitation',
-      description: 'Structured recovery for strains, sprains, overuse injuries and a supported return to sport.',
-      linkText: 'Explore sports rehab →',
-      href: '#technology',
-    },
-    {
-      id: 'chiropractic',
-      iconType: 'tooth',
-      title: 'Chiropractic Care',
-      description: 'Assessment and hands-on care focused on spinal and joint movement, alongside practical guidance.',
-      linkText: 'Explore chiropractic →',
-      href: '#experience',
-    },
-    {
-      id: 'mobility',
-      iconType: 'aligner',
-      title: 'Mobility, Strength & Injury Prevention',
-      description: 'Build movement confidence with progressive exercise, mobility work and strategies tailored to your everyday activities or sport.',
-      linkText: 'Explore movement care →',
-      href: '#technology',
-    },
+    { id: 'sports-rehab', iconType: 'sparkle', title: 'Sports Injury Rehabilitation', description: 'Structured recovery for strains, sprains, overuse injuries and a supported return to sport.', linkText: 'Explore sports rehab →', href: '#technology' },
+    { id: 'chiropractic', iconType: 'tooth', title: 'Chiropractic Care', description: 'Assessment and hands-on care focused on spinal and joint movement, alongside practical guidance.', linkText: 'Explore chiropractic →', href: '#experience' },
+    { id: 'mobility', iconType: 'aligner', title: 'Mobility, Strength & Injury Prevention', description: 'Build movement confidence with progressive exercise, mobility work and strategies tailored to your everyday activities or sport.', linkText: 'Explore movement care →', href: '#technology' },
   ],
 };
 
 export const EXPERIENCE_CONTENT = {
   eyebrow: 'The Kinematics approach',
   headline: 'Your recovery. Your goals. Your pace.',
-  image: {
-    src: 'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=900&q=80',
-    alt: 'Physiotherapist supporting a patient during a guided movement assessment',
-    width: 720,
-    height: 900,
-  },
+  image: { src: 'https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&w=900&q=80', alt: 'Physiotherapist supporting a patient during a guided movement assessment', width: 720, height: 900 },
   points: [
     { number: '1', title: 'Understand the whole picture', text: 'We start by listening to your concerns, reviewing your movement and understanding what you want to get back to.' },
     { number: '2', title: 'A plan made for you', text: 'Your care plan should reflect your symptoms, activity level, preferences and recovery goals.' },
@@ -125,54 +62,16 @@ export const TEAM_CONTENT = {
   headline: 'Expert guidance. Human care.',
   description: 'Meet the practitioners who help you understand your body, work towards your goals and take the next step in your recovery.',
   members: [
-    {
-      id: 'physiotherapist',
-      name: 'Physiotherapy Team',
-      role: 'Physiotherapy & Rehabilitation',
-      credentials: 'Individual assessment · Goal-led recovery',
-      image: {
-        src: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80',
-        alt: 'Healthcare professional in a clinical setting',
-        width: 600,
-        height: 750,
-      },
-    },
-    {
-      id: 'sports-rehab',
-      name: 'Sports Rehabilitation Team',
-      role: 'Sports Injury & Return to Activity',
-      credentials: 'Movement · Strength · Sport-specific goals',
-      image: {
-        src: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80',
-        alt: 'Athlete running outdoors during training',
-        width: 600,
-        height: 750,
-      },
-    },
-    {
-      id: 'chiropractic',
-      name: 'Chiropractic Care Team',
-      role: 'Spinal & Joint Movement',
-      credentials: 'Assessment · Manual care · Movement advice',
-      image: {
-        src: 'https://images.unsplash.com/photo-1768507423533-b87b62769758?auto=format&fit=crop&w=700&q=80',
-        alt: 'Chiropractor adjusting a patient’s upper back and neck during a clinical treatment session',
-        width: 600,
-        height: 750,
-      },
-    },
+    { id: 'physiotherapist', name: 'Physiotherapy Team', role: 'Physiotherapy & Rehabilitation', credentials: 'Individual assessment · Goal-led recovery', image: { src: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80', alt: 'Healthcare professional in a clinical setting', width: 600, height: 750 } },
+    { id: 'sports-rehab', name: 'Sports Rehabilitation Team', role: 'Sports Injury & Return to Activity', credentials: 'Movement · Strength · Sport-specific goals', image: { src: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80', alt: 'Athlete running outdoors during training', width: 600, height: 750 } },
+    { id: 'chiropractic', name: 'Chiropractic Care Team', role: 'Spinal & Joint Movement', credentials: 'Assessment · Manual care · Movement advice', image: { src: 'https://images.unsplash.com/photo-1768507423533-b87b62769758?auto=format&fit=crop&w=700&q=80', alt: 'Chiropractor adjusting a patient’s upper back and neck during a clinical treatment session', width: 600, height: 750 } },
   ],
 };
 
 export const TECHNOLOGY_CONTENT = {
   eyebrow: 'Assessment to action',
   headline: 'A clearer plan for better movement.',
-  image: {
-    src: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80',
-    alt: 'Athlete working with training and rehabilitation equipment in a gym setting',
-    width: 800,
-    height: 900,
-  },
+  image: { src: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80', alt: 'Athlete working with training and rehabilitation equipment in a gym setting', width: 800, height: 900 },
   rows: [
     { tag: 'Assess', title: 'Understand how you move', description: 'A thoughtful assessment helps identify movement limitations and set goals that matter to you.' },
     { tag: 'Rebuild', title: 'Progressive rehabilitation', description: 'A guided progression of mobility, strength and functional exercises matched to your current ability.' },
@@ -184,12 +83,7 @@ export const VISIT_CONTENT = {
   eyebrow: 'Visit Kinematics',
   headline: 'Take the next step towards moving better.',
   subtitle: 'Ask our team about services, availability and the right starting point for your needs.',
-  image: {
-    src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80',
-    alt: 'Bright rehabilitation clinic consultation space with a clinician and patient',
-    width: 1400,
-    height: 650,
-  },
+  image: { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80', alt: 'Bright rehabilitation clinic consultation space with a clinician and patient', width: 1400, height: 650 },
   bottomCards: [
     { title: 'What to expect', description: 'Your first visit may include a discussion of your concerns, movement assessment and a plan for next steps.' },
     { title: 'Not sure which service to choose?', description: 'Tell us what has been bothering you and what you would like to get back to. The team can help you understand the available options.' },
@@ -214,12 +108,7 @@ export const FINAL_CTA_CONTENT = {
   description: 'Start with a conversation about your goals, your movement and the support that may help you move forward.',
   primaryCta: 'Book an Appointment',
   secondaryCta: 'Contact the Clinic',
-  image: {
-    src: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=80',
-    alt: 'Athlete running along a path during a training session',
-    width: 800,
-    height: 700,
-  },
+  image: { src: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=900&q=80', alt: 'Athlete running along a path during a training session', width: 800, height: 700 },
 };
 
 export const FOOTER_CONTENT = {
