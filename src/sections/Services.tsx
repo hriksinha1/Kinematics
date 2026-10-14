@@ -7,7 +7,7 @@ import { SERVICES_CONTENT } from '../data/content';
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="kinetics-soft-panel py-16 sm:py-20 md:py-24">
+    <section id="services" className="bg-white py-16 sm:py-20 md:py-24">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 space-y-9 sm:space-y-12">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
           <div className="space-y-4">
