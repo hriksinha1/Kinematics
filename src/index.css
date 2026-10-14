@@ -2,24 +2,25 @@
 
 @layer theme {
   :root {
-    --color-primary: #2868F5;
-    --color-primary-hover: #1b56dc;
-    --color-navy: #0D1B49;
-    --color-navy-dark: #08112e;
-    --color-text: #151923;
-    --color-muted: #687080;
-    --color-border: #E7EAF0;
-    --color-surface-pale: #F0F4FF;
-    --color-surface-accent: #EAF1FF;
+    --color-primary: #2F5BFF;
+    --color-primary-hover: #2148E8;
+    --color-navy: #101A3A;
+    --color-navy-dark: #091127;
+    --color-text: #111827;
+    --color-muted: #556176;
+    --color-border: #DDE4EF;
+    --color-surface-pale: #F4F7FC;
+    --color-surface-accent: #EAF0FF;
+    --color-kinematics-lime: #C8F36A;
+    --color-kinematics-sky: #80D8FF;
   }
 }
 
-/* Base typography and body styling */
 html {
   scroll-behavior: smooth;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #151923;
-  background-color: #FFFFFF;
+  color: #111827;
+  background-color: #F7F9FC;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,21 +30,60 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #FFFFFF;
+  background-color: #F7F9FC;
 }
 
-/* Display font class for Bebas Neue headings */
 .font-display {
   font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', Impact, sans-serif;
-  letter-spacing: 0.015em;
-  line-height: 1.0;
+  letter-spacing: 0.01em;
+  line-height: 0.96;
 }
 
-/* Reduced motion preference */
+.kinetics-hero {
+  isolation: isolate;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba(200, 243, 106, 0.20), transparent 28rem),
+    radial-gradient(ellipse at 92% 7%, rgba(128, 216, 255, 0.22), transparent 30rem),
+    linear-gradient(180deg, #F8FAFF 0%, #FFFFFF 58%, #F7F9FC 100%);
+}
+
+.kinetics-grid-surface {
+  background-color: #F4F7FC;
+  background-image:
+    linear-gradient(rgba(47, 91, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 91, 255, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.kinetics-section-label {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.kinetics-accent-word {
+  color: #2F5BFF;
+  text-shadow: 0 8px 30px rgba(47, 91, 255, 0.12);
+}
+
+.kinetics-lime-dot {
+  background: #C8F36A;
+  box-shadow: 0 0 0 4px rgba(200, 243, 106, 0.15);
+}
+
+.kinetics-soft-panel {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(128, 216, 255, 0.16), transparent 24rem),
+    #F4F7FC;
+}
+
+::selection {
+  background: #C8F36A;
+  color: #101A3A;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -51,22 +91,13 @@ body {
   }
 }
 
-/* Section scroll margin offset for the sticky/fixed header */
-section {
-  scroll-margin-top: 80px;
-}
+section { scroll-margin-top: 84px; }
 
-/* Focus visible styling */
 :focus-visible {
-  outline: 2px solid #2868F5;
-  outline-offset: 2px;
+  outline: 3px solid #2F5BFF;
+  outline-offset: 3px;
 }
 
-/* Hide scrollbar utility for mobile collage drag/swipe */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/* Hide scrollbar utility for the touch-friendly hero collage. */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
