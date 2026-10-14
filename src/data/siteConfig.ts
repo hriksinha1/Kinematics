@@ -1,8 +1,7 @@
 /**
  * Kinematics — physiotherapy, sports rehabilitation and chiropractic clinic.
- * Contact information supplied by the clinic.
+ * Contact details supplied by the clinic.
  */
-
 export const WHATSAPP_NUMBER = '916289859020';
 export const WHATSAPP_URL = 'https://wa.me/916289859020?text=Hello%20Kinematics%2C%20I%20would%20like%20to%20book%20an%20appointment.';
 export const BOOKING_URL = WHATSAPP_URL;
@@ -10,6 +9,11 @@ export const BOOKING_URL = WHATSAPP_URL;
 export const PHONE_DISPLAY = '+91 62898 59020';
 export const PHONE_TEL = '+916289859020';
 export const CONTACT_HOURS = '10:00 AM – 8:00 PM';
+
+/** This is the WhatsApp/contact window, not a verified clinic opening schedule. */
+export const CLINIC_HOURS = [
+  { days: 'WhatsApp / Contact', hours: CONTACT_HOURS },
+];
 
 export const CLINIC_ADDRESS = {
   name: 'Kinematics Rehabzone',
