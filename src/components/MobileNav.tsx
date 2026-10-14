@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { NAV_LINKS, BOOKING_URL } from '../data/siteConfig';
 import { Button } from './Button';
+import { Logo } from './Logo';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -11,27 +12,18 @@ interface MobileNavProps {
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, id = 'mobile-menu' }) => {
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+      if (e.key === 'Escape' && isOpen) onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Prevent body scrolling when mobile menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+    return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -40,33 +32,27 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose, id = 'mob
     <div
       id={id}
       ref={navRef}
-      className="fixed inset-x-0 top-[64px] bottom-0 z-40 bg-white/95 backdrop-blur-md md:hidden flex flex-col justify-between p-6 overflow-y-auto border-t border-[#E7EAF0] animate-in fade-in duration-200"
+      className="fixed inset-x-0 top-[72px] sm:top-[78px] bottom-0 z-40 bg-white/95 backdrop-blur-md md:hidden flex flex-col justify-between p-6 overflow-y-auto border-t border-[#DDE4EF] animate-in fade-in duration-200"
     >
-      <nav className="flex flex-col space-y-1">
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            onClick={onClose}
-            className="flex items-center text-[18px] font-medium text-[#151923] hover:text-[#2868F5] py-3.5 px-3 rounded-xl hover:bg-[#F0F4FF] transition-colors min-h-[48px]"
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
-
-      <div className="pt-6 border-t border-[#E7EAF0] space-y-3">
-        <Button
-          variant="primary"
-          href={BOOKING_URL}
-          external
-          withArrow
-          fullWidth
-          size="lg"
-          onClick={onClose}
-        >
+      <div>
+        <div className="mb-6 border-b border-[#DDE4EF] pb-5">
+          <Logo />
+          <p className="mt-3 text-[12px] font-semibold tracking-wide text-[#556176]">PHYSIOTHERAPY · SPORTS REHAB · CHIROPRACTIC</p>
+        </div>
+        <nav className="flex flex-col space-y-1" aria-label="Mobile navigation">
+          {NAV_LINKS.map((link, index) => (
+            <a key={link.label} href={link.href} onClick={onClose} className="flex min-h-[50px] items-center justify-between rounded-xl px-3 py-3 text-[18px] font-bold text-[#101A3A] hover:bg-[#EAF0FF] hover:text-[#2F5BFF] transition-colors">
+              <span>{link.label}</span>
+              <span className="font-display text-[20px] text-[#2F5BFF]/55">{String(index + 1).padStart(2, '0')}</span>
+            </a>
+          ))}
+        </nav>
+      </div>
+      <div className="space-y-4 border-t border-[#DDE4EF] pt-5">
+        <Button variant="primary" href={BOOKING_URL} external withArrow fullWidth size="lg" onClick={onClose}>
           Book an Appointment
         </Button>
+        <p className="text-center text-[12px] font-semibold text-[#556176]">WhatsApp booking · 10 AM–8 PM</p>
       </div>
     </div>
   );
