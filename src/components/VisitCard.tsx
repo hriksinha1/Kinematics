@@ -1,5 +1,5 @@
 import React from 'react';
-import { CLINIC_ADDRESS, CLINIC_HOURS, WHATSAPP_URL } from '../data/siteConfig';
+import { CLINIC_ADDRESS, CLINIC_HOURS, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../data/siteConfig';
 import { Button } from './Button';
 
 interface VisitCardProps {
@@ -28,6 +28,13 @@ export const VisitCard: React.FC<VisitCardProps> = ({ className = '' }) => {
             <span className="text-[#0D1B49] font-medium text-right">{item.hours}</span>
           </div>
         ))}
+        {PHONE_TEL ? (
+          <a href={`tel:${PHONE_TEL}`} className="block pt-1 text-[13px] font-medium text-[#2868F5] hover:text-[#1b56dc] transition-colors">
+            {PHONE_DISPLAY}
+          </a>
+        ) : (
+          <p className="pt-1 text-[13px] font-medium text-[#2868F5]">{PHONE_DISPLAY}</p>
+        )}
       </div>
 
       <div className="pt-1 space-y-2">
